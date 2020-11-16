@@ -140,7 +140,7 @@ $(document).ready(function () {
 			  navigation: true,
 			  navigationTooltips: ['head', 'plus', 'stat', 'analit', 'autors', 'step', 'top-autors', 'reviews', 'footer'],
 			  anchors: ['head', 'plus', 'stat', 'analit', 'autors', 'step', 'top-autors', 'reviews', 'footer'],
-			  menu: '#myMenu',
+			   menu: '#myMenu',
 			  fitToSection: false,
 			
 			  afterLoad: function ( anchorLink, index){
@@ -765,7 +765,10 @@ $(document).ready(function () {
 			scrollingSpeed: 1000,
 			autoScrolling:true,
 			scrollHorizontally: true,
-			navigation: false,
+			navigation: true,
+			navigationTooltips: ['head', 'plus', 'stat', 'analit', 'autors', 'step', 'top-autors', 'reviews', 'footer'],
+			anchors: ['head', 'plus', 'stat', 'analit', 'autors', 'step', 'top-autors', 'reviews', 'footer'], 
+			menu: '#myMenu',
 			slidesNavigation: false,
 			slidesNavPosition: 'bottom',
 			afterLoad: function(index, direction){
@@ -774,16 +777,6 @@ $(document).ready(function () {
 				$(".blt").removeClass("white");
 				$(".blt__item").removeClass("active")
 				$(".blt__item:nth-child("+index+")").addClass("active")
-				if ($(".section.active").hasClass("serv__section")) {
-					$(".blt").addClass("hidden");
-				}
-				if ($(".section.active").hasClass("no-pag")) {
-					$(".blt").addClass("hidden");
-				}
-				if ($(".section.active").hasClass("blue")) {
-					$(".blt").addClass("white");
-				}
-				$(".blt__cur").text("0" + index);
 				if($('.ggg').hasClass('active')) {
 					$('.count').each(function () {
 						$(this).prop('Counter',0).animate({
@@ -797,6 +790,17 @@ $(document).ready(function () {
 						});
 					});
 				}
+				if ($(".section.active").hasClass("serv__section")) {
+					$(".blt").addClass("hidden");
+				}
+				if ($(".section.active").hasClass("no-pag")) {
+					$(".blt").addClass("hidden");
+				}
+				if ($(".section.active").hasClass("blue")) {
+					$(".blt").addClass("white");
+				}
+				$(".blt__cur").text("0" + index);
+				
 			 }
 		});	
 	}
